@@ -24,7 +24,6 @@ func (r *referenceHandler) HandleValueAdded(
 	inst directive.Instance,
 	val directive.Value,
 ) {
-	r.c.le.Debugf("ReferenceHandler HandleValueAdded(%#v, %#v)", inst, val)
 	valEnt, valEntOk := val.(entity.Entity)
 	if !valEntOk {
 		r.c.le.Warn("ignoring non-entity directive value added")
@@ -39,7 +38,6 @@ func (r *referenceHandler) HandleValueRemoved(
 	inst directive.Instance,
 	val directive.Value,
 ) {
-	r.c.le.Debugf("ReferenceHandler HandleValueRemoved(%#v, %#v)", inst, val)
 	valEnt, valEntOk := val.(entity.Entity)
 	if !valEntOk {
 		r.c.le.Warn("ignoring non-entity directive value removed")
