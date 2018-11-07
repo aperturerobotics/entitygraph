@@ -15,6 +15,13 @@ type entityObserver struct {
 	c *Controller
 }
 
+// registeredObserver is a observer with callbacks
+type registeredObserver struct {
+	entityObs *entityObserver
+	addedCb   func(ent entity.Entity)
+	removedCb func(ent entity.Entity)
+}
+
 // newEntityObserver constructs a new entityObserver
 func newEntityObserver(c *Controller) *entityObserver {
 	return &entityObserver{c: c}
@@ -26,8 +33,9 @@ func newEntityObserver(c *Controller) *entityObserver {
 // The resolver will not be retried after returning an error.
 // Values will be maintained from the previous call.
 func (e *entityObserver) Resolve(ctx context.Context, handler directive.ResolverHandler) error {
+	e.c.le.Info("entity observer resolve() called")
 	// Register the observer with the system and get the initial set
-	var valueIDS []uint32
+	valueIDS := make(map[entity.Entity]uint32)
 	var valueMtx sync.Mutex
 	var disposed bool
 	addVal := func(ent entity.Entity) {
@@ -37,15 +45,34 @@ func (e *entityObserver) Resolve(ctx context.Context, handler directive.Resolver
 
 		id, ok := handler.AddValue(ent)
 		if ok {
-			valueIDS = append(valueIDS, id)
+			valueIDS[ent] = id
+		}
+	}
+	rmVal := func(ent entity.Entity) {
+		if disposed {
+			return
+		}
+
+		vid, ok := valueIDS[ent]
+		if ok {
+			delete(valueIDS, ent)
+			handler.RemoveValue(vid)
 		}
 	}
 
 	valueMtx.Lock()
-	initialSet := e.c.registerObserver(e, func(ent entity.Entity) {
-		valueMtx.Lock()
-		defer valueMtx.Unlock()
-		addVal(ent)
+	initialSet := e.c.registerObserver(&registeredObserver{
+		entityObs: e,
+		addedCb: func(ent entity.Entity) {
+			valueMtx.Lock()
+			addVal(ent)
+			valueMtx.Unlock()
+		},
+		removedCb: func(ent entity.Entity) {
+			valueMtx.Lock()
+			rmVal(ent)
+			valueMtx.Unlock()
+		},
 	})
 	for _, is := range initialSet {
 		addVal(is)

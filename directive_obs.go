@@ -7,11 +7,6 @@ import (
 // observeEntityGraph implements ObserveEntityGraph
 type observeEntityGraph struct{}
 
-// ObserveEntityGraphDirective is a marker function.
-func (g *observeEntityGraph) ObserveEntityGraphDirective() {
-	// noop
-}
-
 // NewObserveEntityGraph constructs a new ObserveEntityGraph directive.
 func NewObserveEntityGraph() ObserveEntityGraph {
 	return &observeEntityGraph{}
@@ -21,6 +16,11 @@ func NewObserveEntityGraph() ObserveEntityGraph {
 // This is a cursory validation to see if the values "look correct."
 func (g *observeEntityGraph) Validate() error {
 	return nil
+}
+
+// ObserveEntityGraphDirective is a marker function.
+func (g *observeEntityGraph) ObserveEntityGraphDirective() {
+	// noop
 }
 
 // GetValueOptions returns options relating to value handling.

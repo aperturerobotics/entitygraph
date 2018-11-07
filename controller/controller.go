@@ -41,7 +41,7 @@ type Controller struct {
 	// we have to store it here so we can emit when the directive is first made
 	entities map[store.EntityMapKey]entity.Entity
 	// observer is the map of entity observers
-	observers map[*entityObserver]func(val entity.Entity)
+	observers map[*entityObserver]*registeredObserver
 }
 
 // NewController constructs a new entity graph controller.
@@ -55,7 +55,7 @@ func NewController(
 		bus:       bus,
 		conf:      conf,
 		entities:  make(map[store.EntityMapKey]entity.Entity),
-		observers: make(map[*entityObserver]func(val entity.Entity)),
+		observers: make(map[*entityObserver]*registeredObserver),
 	}
 	c.store = store.NewStore(newStoreHandler(c))
 	return c
@@ -96,11 +96,11 @@ func (c *Controller) resolveObserveEntityGraph(
 }
 
 // registerObserver registers an observer and returns the initial set
-func (c *Controller) registerObserver(obs *entityObserver, cb func(val entity.Entity)) []entity.Entity {
+func (c *Controller) registerObserver(robs *registeredObserver) []entity.Entity {
 	c.mtx.Lock()
 	defer c.mtx.Unlock()
 
-	c.observers[obs] = cb
+	c.observers[robs.entityObs] = robs
 	initialSet := make([]entity.Entity, len(c.entities))
 	i := 0
 	for _, ent := range c.entities {
