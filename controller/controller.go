@@ -79,18 +79,18 @@ func (c *Controller) HandleDirective(
 	inst directive.Instance,
 ) (directive.Resolver, error) {
 	dir := inst.GetDirective()
-	if d, ok := dir.(entitygraph.CollectEntityGraph); ok {
-		return c.resolveCollectEntityGraph(ctx, inst, d)
+	if d, ok := dir.(entitygraph.ObserveEntityGraph); ok {
+		return c.resolveObserveEntityGraph(ctx, inst, d)
 	}
 
 	return nil, nil
 }
 
-// resolveCollectEntityGraph resolves a CollectEntityGraph directive
-func (c *Controller) resolveCollectEntityGraph(
+// resolveObserveEntityGraph resolves a ObserveEntityGraph directive
+func (c *Controller) resolveObserveEntityGraph(
 	ctx context.Context,
 	inst directive.Instance,
-	d entitygraph.CollectEntityGraph,
+	d entitygraph.ObserveEntityGraph,
 ) (directive.Resolver, error) {
 	return newEntityObserver(c), nil
 }

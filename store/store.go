@@ -34,7 +34,7 @@ func NewStore(handler Handler) *Store {
 
 // AddEntityObj adds an entity object to the store.
 func (s *Store) AddEntityObj(ent entity.Entity) {
-	key := newEntityMapKey(ent)
+	key := NewEntityMapKey(ent)
 	s.mtx.Lock()
 	defer s.mtx.Unlock()
 
@@ -52,7 +52,7 @@ func (s *Store) AddEntityObj(ent entity.Entity) {
 // RemoveEntityObj removes an entity object from the store.
 // Returns if found.
 func (s *Store) RemoveEntityObj(ent entity.Entity) bool {
-	key := newEntityMapKey(ent)
+	key := NewEntityMapKey(ent)
 	s.mtx.Lock()
 	defer s.mtx.Unlock()
 

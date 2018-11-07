@@ -8,8 +8,8 @@ type EntityMapKey struct {
 	typeName string
 }
 
-// newEntityMapKey constructs a new EntityMapKey from an Entity
-func newEntityMapKey(ent entity.Entity) EntityMapKey {
+// NewEntityMapKey constructs a new EntityMapKey from an Entity
+func NewEntityMapKey(ent entity.Entity) EntityMapKey {
 	return EntityMapKey{
 		id:       ent.GetEntityID(),
 		typeName: ent.GetEntityTypeName(),
@@ -25,7 +25,7 @@ type storeEntity struct {
 // newStoreEntity constructs a new storeEntity from an Entity.
 func newStoreEntity(ent entity.Entity) *storeEntity {
 	return &storeEntity{
-		Key: newEntityMapKey(ent),
+		Key: NewEntityMapKey(ent),
 		Values: []storeEntityValue{
 			newStoreEntityValue(ent),
 		},
