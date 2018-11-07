@@ -44,7 +44,6 @@ func (s *storeEntity) DelEntity(ent entity.Entity) bool {
 	for i := range s.Values {
 		if s.Values[i].Entity == ent {
 			s.Values[i] = s.Values[len(s.Values)-1]
-			s.Values[len(s.Values)-1] = nil
 			s.Values = s.Values[:len(s.Values)-1]
 			return true
 		}

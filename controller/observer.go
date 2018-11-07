@@ -65,7 +65,7 @@ func (e *entityObserver) Resolve(ctx context.Context, handler directive.Resolver
 		}
 	}()
 
-	<-ctx.Err()
+	<-ctx.Done()
 	return nil
 }
 

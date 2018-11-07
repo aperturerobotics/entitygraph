@@ -44,7 +44,7 @@ func (r *referenceHandler) HandleValueRemoved(
 		return
 	}
 
-	r.store.RemoveEntityObject(valEnt)
+	r.store.RemoveEntityObj(valEnt)
 }
 
 // HandleInstanceDisposed is called when a directive instance is disposed.

@@ -125,7 +125,7 @@ func (c *Controller) Execute(ctx context.Context) error {
 	// Register collect entity graph directive
 	di, diRef, err := c.bus.AddDirective(
 		NewCollectEntityGraphDirective(),
-		newReferenceHandler(c, store),
+		newReferenceHandler(c, c.store),
 	)
 	if err != nil {
 		return err
