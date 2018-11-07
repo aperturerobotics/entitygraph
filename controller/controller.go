@@ -2,10 +2,16 @@ package entitygraph_controller
 
 import (
 	"context"
+	"sync"
 
 	"github.com/aperturerobotics/controllerbus/bus"
 	"github.com/aperturerobotics/controllerbus/controller"
 	"github.com/aperturerobotics/controllerbus/directive"
+
+	"github.com/aperturerobotics/entitygraph"
+	"github.com/aperturerobotics/entitygraph/entity"
+	"github.com/aperturerobotics/entitygraph/store"
+
 	"github.com/blang/semver"
 	"github.com/sirupsen/logrus"
 )
@@ -26,6 +32,16 @@ type Controller struct {
 	bus bus.Bus
 	// conf is the configuration
 	conf *Config
+	// store is the store
+	store *store.Store
+
+	// mtx guards entities
+	mtx sync.Mutex
+	// entities is the map of known entities
+	// we have to store it here so we can emit when the directive is first made
+	entities map[store.EntityMapKey]entity.Entity
+	// observer is the map of entity observers
+	observers map[*entityObserver]func(val entity.Entity)
 }
 
 // NewController constructs a new entity graph controller.
@@ -34,11 +50,15 @@ func NewController(
 	bus bus.Bus,
 	conf *Config,
 ) *Controller {
-	return &Controller{
-		le:   le,
-		bus:  bus,
-		conf: conf,
+	c := &Controller{
+		le:        le,
+		bus:       bus,
+		conf:      conf,
+		entities:  make(map[store.EntityMapKey]entity.Entity),
+		observers: make(map[*entityObserver]func(val entity.Entity)),
 	}
+	c.store = store.NewStore(newStoreHandler(c))
+	return c
 }
 
 // GetControllerInfo returns information about the controller.
@@ -58,7 +78,44 @@ func (c *Controller) HandleDirective(
 	ctx context.Context,
 	inst directive.Instance,
 ) (directive.Resolver, error) {
+	dir := inst.GetDirective()
+	if d, ok := dir.(entitygraph.CollectEntityGraph); ok {
+		return c.resolveCollectEntityGraph(ctx, inst, d)
+	}
+
 	return nil, nil
+}
+
+// resolveCollectEntityGraph resolves a CollectEntityGraph directive
+func (c *Controller) resolveCollectEntityGraph(
+	ctx context.Context,
+	inst directive.Instance,
+	d entitygraph.CollectEntityGraph,
+) (directive.Resolver, error) {
+	return newEntityObserver(c), nil
+}
+
+// registerObserver registers an observer and returns the initial set
+func (c *Controller) registerObserver(obs *entityObserver, cb func(val entity.Entity)) []entity.Entity {
+	c.mtx.Lock()
+	defer c.mtx.Unlock()
+
+	c.observers[obs] = cb
+	initialSet := make([]entity.Entity, len(c.entities))
+	i := 0
+	for _, ent := range c.entities {
+		initialSet[i] = ent
+		i++
+	}
+	return initialSet
+}
+
+// clearObserver removes an observer
+func (c *Controller) clearObserver(obs *entityObserver) {
+	c.mtx.Lock()
+	defer c.mtx.Unlock()
+
+	delete(c.observers, obs)
 }
 
 // Execute executes the given controller.
@@ -68,14 +125,13 @@ func (c *Controller) Execute(ctx context.Context) error {
 	// Register collect entity graph directive
 	di, diRef, err := c.bus.AddDirective(
 		NewCollectEntityGraphDirective(),
-		newReferenceHandler(c),
+		newReferenceHandler(c, store),
 	)
 	if err != nil {
 		return err
 	}
 	defer diRef.Release()
 
-	// TODO
 	_ = di
 	c.le.Info("entitygraph aggregation controller running")
 	<-ctx.Done()

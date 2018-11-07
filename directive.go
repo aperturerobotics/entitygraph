@@ -13,3 +13,13 @@ type CollectEntityGraph interface {
 	// noop
 	CollectEntityGraphDirective()
 }
+
+// ObserveEntityGraph is a directive to observe the entity graph.
+type ObserveEntityGraph interface {
+	// Directive indicates CollectEntityGraph is a directive.
+	directive.Directive
+
+	// ObserveEntityGraphDirective is a marker function.
+	// noop
+	ObserveEntityGraphDirective()
+}
