@@ -73,7 +73,7 @@ func (s *Store) RemoveEntityObj(ent entity.Entity) bool {
 // mtx is locked
 func (s *Store) emitStoreEntityAdd(storeEnt *storeEntity) {
 	if s.handler != nil {
-		s.handler.HandleEntityAdded(storeEnt)
+		s.handler.HandleEntityAdded(storeEnt.Ent)
 	}
 }
 
@@ -81,6 +81,6 @@ func (s *Store) emitStoreEntityAdd(storeEnt *storeEntity) {
 // mtx is locked
 func (s *Store) emitStoreEntityRm(storeEnt *storeEntity) {
 	if s.handler != nil {
-		s.handler.HandleEntityRemoved(storeEnt)
+		s.handler.HandleEntityRemoved(storeEnt.Ent)
 	}
 }

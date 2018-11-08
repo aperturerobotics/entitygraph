@@ -18,6 +18,7 @@ func NewEntityMapKey(ent entity.Entity) EntityMapKey {
 
 // storeEntity is an entity in the store.
 type storeEntity struct {
+	Ent    entity.Entity
 	Key    EntityMapKey
 	Values []storeEntityValue
 }
@@ -25,6 +26,7 @@ type storeEntity struct {
 // newStoreEntity constructs a new storeEntity from an Entity.
 func newStoreEntity(ent entity.Entity) *storeEntity {
 	return &storeEntity{
+		Ent: ent,
 		Key: NewEntityMapKey(ent),
 		Values: []storeEntityValue{
 			newStoreEntityValue(ent),
@@ -51,19 +53,6 @@ func (s *storeEntity) DelEntity(ent entity.Entity) bool {
 
 	return false
 }
-
-// GetEntityID returns the entity id.
-func (s *storeEntity) GetEntityID() string {
-	return s.Key.id
-}
-
-// GetEntityTypeName returns the entity type name.
-func (s *storeEntity) GetEntityTypeName() string {
-	return s.Key.typeName
-}
-
-// _ is a type assertion
-var _ entity.Entity = ((*storeEntity)(nil))
 
 // storeEntityValue is a value representing an entity.
 type storeEntityValue struct {
