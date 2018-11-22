@@ -44,5 +44,17 @@ func (d *CollectEntityGraphDirective) Superceeds(other directive.Directive) bool
 	return false
 }
 
+// GetName returns the directive's type name.
+// This is not necessarily unique, and is primarily intended for display.
+func (d *CollectEntityGraphDirective) GetName() string {
+	return "CollectEntityGraph"
+}
+
+// GetDebugVals returns the directive arguments as k/v pairs.
+// This is not necessarily unique, and is primarily intended for display.
+func (d *CollectEntityGraphDirective) GetDebugVals() directive.DebugValues {
+	return nil
+}
+
 // _ is a type constraint
 var _ entitygraph.CollectEntityGraph = ((*CollectEntityGraphDirective)(nil))

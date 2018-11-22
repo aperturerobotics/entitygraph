@@ -42,5 +42,17 @@ func (g *observeEntityGraph) Superceeds(other directive.Directive) bool {
 	return false
 }
 
+// GetName returns the directive's type name.
+// This is not necessarily unique, and is primarily intended for display.
+func (d *observeEntityGraph) GetName() string {
+	return "ObserveEntityGraph"
+}
+
+// GetDebugVals returns the directive arguments as k/v pairs.
+// This is not necessarily unique, and is primarily intended for display.
+func (d *observeEntityGraph) GetDebugVals() directive.DebugValues {
+	return nil
+}
+
 // _ is a type assertion
 var _ ObserveEntityGraph = ((*observeEntityGraph)(nil))
