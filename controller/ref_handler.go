@@ -22,9 +22,9 @@ func newReferenceHandler(c *Controller, store *store.Store) *referenceHandler {
 // HandleValueAdded is called when a value is added to the directive.
 func (r *referenceHandler) HandleValueAdded(
 	inst directive.Instance,
-	val directive.Value,
+	val directive.AttachedValue,
 ) {
-	valEnt, valEntOk := val.(entity.Entity)
+	valEnt, valEntOk := val.GetValue().(entity.Entity)
 	if !valEntOk {
 		r.c.le.Warn("ignoring non-entity directive value added")
 		return
@@ -36,9 +36,9 @@ func (r *referenceHandler) HandleValueAdded(
 // HandleValueRemoved is called when a value is removed from the directive.
 func (r *referenceHandler) HandleValueRemoved(
 	inst directive.Instance,
-	val directive.Value,
+	val directive.AttachedValue,
 ) {
-	valEnt, valEntOk := val.(entity.Entity)
+	valEnt, valEntOk := val.GetValue().(entity.Entity)
 	if !valEntOk {
 		r.c.le.Warn("ignoring non-entity directive value removed")
 		return
