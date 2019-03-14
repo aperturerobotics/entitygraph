@@ -1,17 +1,42 @@
-gengo:
+PROTOWRAP=gobin -run github.com/square/goprotowrap/cmd/protowrap@master
+GOLIST=go list -f "{{ .Dir }}" -m
+
+all:
+
+gengo: vendor/bin/gobin
 	shopt -s globstar; \
-	protowrap -I $${GOPATH}/src \
-		--go_out=$${GOPATH}/src \
-		--proto_path $${GOPATH}/src \
+	set -eo pipefail; \
+	export PATH=$$(pwd)/vendor/bin:$${PATH}; \
+	export GO111MODULE=on; \
+	export PROJECT=$$(go list -m); \
+	mkdir -p $$(pwd)/vendor/github.com/aperturerobotics; \
+	rm $$(pwd)/vendor/$${PROJECT} || true; \
+	ln -s $$(pwd) $$(pwd)/vendor/$${PROJECT} ; \
+	$(PROTOWRAP) \
+		-I $$(pwd)/vendor \
+		--go_out=plugins=grpc:$$(pwd)/vendor \
+		--proto_path $$(pwd)/vendor \
 		--print_structure \
 		--only_specified_files \
-		$$(pwd)/**/*.proto
-	go install -v ./...
+		$$(\
+			git \
+				ls-files "*.proto" |\
+				xargs printf -- \
+				"$$(pwd)/vendor/$${PROJECT}/%s ")
 
-deps:
-	go get -u -v github.com/golang/protobuf/protoc-gen-go
-	go get -v github.com/square/goprotowrap/cmd/protowrap
+
+vendor/bin/gobin:
+	mkdir -p vendor/bin
+	export GO111MODULE=on ; \
+	go mod vendor ; \
+	cd ./vendor ; touch go.mod ; \
+	go mod tidy -v ; \
+	go build -v \
+		-o ./bin/protoc-gen-go \
+		github.com/golang/protobuf/protoc-gen-go ; \
+	go build -v \
+		-o ./bin/gobin \
+		github.com/myitcv/gobin
 
 test:
 	go test -v ./...
-
