@@ -4,9 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/aperturerobotics/entitygraph/entity"
-
 	"github.com/aperturerobotics/controllerbus/directive"
+	"github.com/aperturerobotics/entitygraph/entity"
 )
 
 // entityObserver is an entity observer.
@@ -33,7 +32,6 @@ func newEntityObserver(c *Controller) *entityObserver {
 // The resolver will not be retried after returning an error.
 // Values will be maintained from the previous call.
 func (e *entityObserver) Resolve(ctx context.Context, handler directive.ResolverHandler) error {
-	e.c.le.Info("entity observer resolve() called")
 	// Register the observer with the system and get the initial set
 	valueIDS := make(map[entity.Entity]uint32)
 	var valueMtx sync.Mutex
