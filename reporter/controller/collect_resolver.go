@@ -3,10 +3,9 @@ package reporter_controller
 import (
 	"context"
 
+	"github.com/aperturerobotics/controllerbus/directive"
 	"github.com/aperturerobotics/entitygraph/entity"
 	"github.com/aperturerobotics/entitygraph/store"
-
-	"github.com/aperturerobotics/controllerbus/directive"
 )
 
 // collectResolver is a CollectEntityGraph resolver
@@ -57,6 +56,7 @@ func (r *collectResolver) Resolve(ctx context.Context, handler directive.Resolve
 				a[i] = a[len(a)-1]
 				a[len(a)-1] = nil
 				a = a[:len(a)-1]
+				r.c.handlers = a
 				break
 			}
 		}
