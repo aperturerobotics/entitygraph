@@ -30,7 +30,7 @@ type Controller struct {
 	// reporterCh contains the controlled reporter
 	reporterCh chan reporter.Reporter
 	// controllerInfo contains the controller info
-	controllerInfo controller.Info
+	controllerInfo *controller.Info
 
 	// mtx guards the collectors map
 	mtx sync.Mutex
@@ -44,7 +44,7 @@ type Controller struct {
 func NewController(
 	le *logrus.Entry,
 	bus bus.Bus,
-	info controller.Info,
+	info *controller.Info,
 	ctor reporter.Constructor,
 ) *Controller {
 	c := &Controller{
@@ -102,7 +102,7 @@ func (c *Controller) handleCollectEntityGraph(
 }
 
 // GetControllerInfo returns information about the controller.
-func (c *Controller) GetControllerInfo() controller.Info {
+func (c *Controller) GetControllerInfo() *controller.Info {
 	return c.controllerInfo
 }
 

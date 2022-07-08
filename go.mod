@@ -8,10 +8,10 @@ replace (
 )
 
 require (
-	github.com/aperturerobotics/controllerbus v0.10.2
+	github.com/aperturerobotics/controllerbus v0.11.1
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/sirupsen/logrus v1.8.0
-	google.golang.org/protobuf v1.27.1
+	github.com/sirupsen/logrus v1.8.2-0.20220112234510-85981c045988
+	google.golang.org/protobuf v1.28.0
 )
 
-require golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 // indirect
+require golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e // indirect
