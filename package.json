@@ -18,7 +18,8 @@
     "lint": "npm run lint:go && npm run lint:js",
     "lint:go": "make lint",
     "lint:js": "eslint -c .eslintrc.js --ext .ts ./**/*.ts",
-    "prepare": "patch-package && go mod vendor",
+    "patch": "patch-package --use-yarn --patch-dir ./node_modules/@aperturerobotics/ts-common/patches",
+    "prepare": "npm run patch && go mod vendor",
     "precommit": "npm run format"
   },
   "prettier": {
@@ -26,19 +27,20 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
+    "@aperturerobotics/ts-common": "^0.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "depcheck": "^1.4.3",
-    "eslint": "^8.19.0",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "patch-package": "^6.4.7",
     "prettier": "^2.7.1",
-    "ts-proto": "^1.117.0",
-    "typescript": "^4.7.4"
+    "ts-proto": "^1.128.0",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@aperturerobotics/ts-proto-common-types": "^0.1.0",
+    "@aperturerobotics/ts-proto-common-types": "^0.2.0",
     "long": "^5.2.0",
-    "protobufjs": "^6.11.3"
+    "protobufjs": "^7.1.2"
   }
 }
