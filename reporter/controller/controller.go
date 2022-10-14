@@ -82,11 +82,11 @@ func (c *Controller) Execute(ctx context.Context) error {
 func (c *Controller) HandleDirective(
 	ctx context.Context,
 	di directive.Instance,
-) (directive.Resolver, error) {
+) ([]directive.Resolver, error) {
 	dir := di.GetDirective()
 	switch d := dir.(type) {
 	case entitygraph.CollectEntityGraph:
-		return c.handleCollectEntityGraph(ctx, di, d)
+		return directive.R(c.handleCollectEntityGraph(ctx, di, d))
 	}
 
 	return nil, nil
