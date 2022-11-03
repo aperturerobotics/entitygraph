@@ -1,16 +1,31 @@
 {
   "name": "@aperturerobotics/entitygraph",
+  "description": "Graph viz for program state.",
   "version": "0.0.0",
-  "description": "Expose system state as a graph of entities.",
-  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Aperture Robotics LLC.",
+    "email": "support@aperture.us",
+    "url": "http://aperture.us"
+  },
+  "contributors": [
+    {
+      "name": "Christian Stewart",
+      "email": "christian@aperture.us",
+      "url": "http://github.com/paralin"
+    }
+  ],
+  "repository": {
+    "url": "git@github.com:aperturerobotics/hydra.git"
+  },
   "scripts": {
-    "build": "tsc --project tsconfig.build.json --outDir ./dist/",
+    "build": "tsc --project tsconfig.json --noEmit false --module ES6 --target es2022 --outDir ./dist/",
     "check": "npm run typecheck",
     "typecheck": "tsc --noEmit",
-    "deps": "depcheck --ignores bufferutil,utf-8-validate,ts-proto,ts-poet,esbuild",
+    "deps": "depcheck --ignores bufferutil,utf-8-validate,ts-proto,ts-poet,esbuild,starpc",
     "codegen": "npm run gen",
     "ci": "npm run build && npm run lint:js && npm run lint:go",
-    "format": "prettier --write './!(vendor|dist)/**/(*.ts|*.tsx|*.html|*.css)'",
+    "format": "prettier --write './!(vendor|dist)/**/(*.ts|*.tsx|*.js|*.html|*.css)'",
     "gen": "make genproto",
     "test": "make test && npm run check",
     "test:js": "echo No JS tests.",
@@ -35,12 +50,15 @@
     "eslint-config-prettier": "^8.5.0",
     "patch-package": "^6.4.7",
     "prettier": "^2.7.1",
-    "ts-proto": "^1.128.0",
+    "ts-proto": "^1.129.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "@aperturerobotics/ts-proto-common-types": "^0.2.0",
+    "bufferutil": "^4.0.6",
     "long": "^5.2.0",
-    "protobufjs": "^7.1.2"
+    "protobufjs": "^7.1.2",
+    "starpc": "^0.13.1",
+    "utf-8-validate": "^5.0.9"
   }
 }
