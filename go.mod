@@ -12,7 +12,7 @@ replace (
 )
 
 require (
-	github.com/aperturerobotics/util v1.0.6-0.20230313071030-6260e05b62e5 // indirect; latest
+	github.com/aperturerobotics/util v1.0.6-0.20230321080419-5cda68c3fec6 // indirect; latest
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
