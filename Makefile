@@ -54,8 +54,7 @@ $(GO_MOD_OUTDATED):
 		github.com/psampaz/go-mod-outdated
 
 .PHONY: gengo
-gengo: $(GOIMPORTS) $(PROTOWRAP) $(PROTOC_GEN_GO) $(PROTOC_GEN_VTPROTO)
-	go mod vendor
+gengo: vendor $(GOIMPORTS) $(PROTOWRAP) $(PROTOC_GEN_GO) $(PROTOC_GEN_VTPROTO) $(PROTOC_GEN_STARPC)
 	shopt -s globstar; \
 	set -eo pipefail; \
 	export PROJECT=$$(go list -m); \
@@ -67,7 +66,8 @@ gengo: $(GOIMPORTS) $(PROTOWRAP) $(PROTOC_GEN_GO) $(PROTOC_GEN_VTPROTO)
 		-I $$(pwd)/vendor \
 		--go_out=$$(pwd)/vendor \
 		--go-vtproto_out=$$(pwd)/vendor \
-		--go-vtproto_opt=features=marshal+unmarshal+size+equal \
+		--go-vtproto_opt=features=marshal+unmarshal+size+equal+clone \
+		--go-starpc_out=$$(pwd)/vendor \
 		--proto_path $$(pwd)/vendor \
 		--print_structure \
 		--only_specified_files \
@@ -83,8 +83,7 @@ node_modules:
 	yarn install
 
 .PHONY: gents
-gents: $(PROTOWRAP) node_modules
-	go mod vendor
+gents: vendor $(PROTOWRAP) node_modules
 	shopt -s globstar; \
 	set -eo pipefail; \
 	export PROJECT=$$(go list -m); \
@@ -102,8 +101,9 @@ gents: $(PROTOWRAP) node_modules
 		--ts_proto_opt=forceLong=long \
 		--ts_proto_opt=oneof=unions \
 		--ts_proto_opt=outputServices=default,outputServices=generic-definitions \
-		--ts_proto_opt=useDate=true \
+		--ts_proto_opt=useAbortSignal=true \
 		--ts_proto_opt=useAsyncIterable=true \
+		--ts_proto_opt=useDate=true \
 		--proto_path $$(pwd)/vendor \
 		--print_structure \
 		--only_specified_files \
@@ -112,7 +112,8 @@ gents: $(PROTOWRAP) node_modules
 				ls-files "*.proto" |\
 				xargs printf -- \
 				"$$(pwd)/vendor/$${PROJECT}/%s "); \
-	go mod vendor
+	rm $$(pwd)/vendor/$${PROJECT} || true
+	npm run format
 
 .PHONY: genproto
 genproto: gengo gents
