@@ -2,7 +2,7 @@ module github.com/aperturerobotics/entitygraph
 
 go 1.19
 
-require github.com/aperturerobotics/controllerbus v0.24.3
+require github.com/aperturerobotics/controllerbus v0.25.3
 
 // Note: the below is from the ControllerBus go.mod
 
@@ -12,7 +12,7 @@ replace (
 )
 
 require (
-	github.com/aperturerobotics/util v1.0.6-0.20230323123147-d1b8fef6a782 // indirect; latest
+	github.com/aperturerobotics/util v1.1.1 // indirect; latest
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -22,5 +22,5 @@ require (
 
 require (
 	github.com/stretchr/testify v1.8.1 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
 )
