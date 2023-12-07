@@ -24,6 +24,8 @@ github.com/aperturerobotics/util v1.1.1 h1:lZye9i6tBN36mIki/V1Mk5r5JcegkiQBeaME2
 github.com/aperturerobotics/util v1.1.1/go.mod h1:VB5a5FURpm7EujJsErIY8UZrhrLPN/bj84H8FxN0gD4=
 github.com/aperturerobotics/util v1.7.8 h1:mHGhEvrka5+l5aB44p4FtuejknbkNtR2si86tPokXao=
 github.com/aperturerobotics/util v1.7.8/go.mod h1:idhGuFuAatygqticAnPcSZhef8yV7TYufLUw1Qfj4Cg=
+github.com/aperturerobotics/util v1.8.0 h1:xsptCdCAYVKHblM8f/Zvi0Sj6rdOXeABooY5lePwvzE=
+github.com/aperturerobotics/util v1.8.0/go.mod h1:idhGuFuAatygqticAnPcSZhef8yV7TYufLUw1Qfj4Cg=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/cenkalti/backoff v2.2.1+incompatible h1:tNowT99t7UNflLxfYYSlKYsBpXdEet03Pg2g16Swow4=
