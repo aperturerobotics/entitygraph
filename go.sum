@@ -8,6 +8,8 @@ github.com/aperturerobotics/controllerbus v0.25.3 h1:Xcp4C26jA5ZHgsnnVb5jeOJFVON
 github.com/aperturerobotics/controllerbus v0.25.3/go.mod h1:fDpnhFHIITBKOWXiYjHtVQDWuTXsj09omvKClkLlO6E=
 github.com/aperturerobotics/controllerbus v0.30.11 h1:N6CiDcnhGb9m0Ky+cM2NvD0hyCLSOXyjm54GFkRFSI0=
 github.com/aperturerobotics/controllerbus v0.30.11/go.mod h1:cmnwxV4Li+faXi8Q0/KYcfgYC+LVNL7vvpzl+YeXUJw=
+github.com/aperturerobotics/controllerbus v0.31.0 h1:+yCuoZnwSkDyj8pjyMiwFmlWYbdF+VLvkWtpCbLD4Zw=
+github.com/aperturerobotics/controllerbus v0.31.0/go.mod h1:zybMYMmMnExd014wRQFXx7qblt/OIsqKj6ZivPe47fM=
 github.com/aperturerobotics/logrus v1.9.1-0.20221224130652-ff61cbb763af h1:nRveANX8PK0j+6M+d6Hyl45W+fQpg6BDBfcrrFMbbrw=
 github.com/aperturerobotics/logrus v1.9.1-0.20221224130652-ff61cbb763af/go.mod h1:naHLuLoDiP4jHNo9R0sCBMtWGeIprob74mVsIT4qYEQ=
 github.com/aperturerobotics/protobuf-go v1.28.2-0.20230301012226-7fb3cdbd9197 h1:JH6tRBjafohuZ71YD2MReuyTAQ+kFeK9qGDshJjEB2Y=
@@ -26,6 +28,8 @@ github.com/aperturerobotics/util v1.7.8 h1:mHGhEvrka5+l5aB44p4FtuejknbkNtR2si86t
 github.com/aperturerobotics/util v1.7.8/go.mod h1:idhGuFuAatygqticAnPcSZhef8yV7TYufLUw1Qfj4Cg=
 github.com/aperturerobotics/util v1.8.0 h1:xsptCdCAYVKHblM8f/Zvi0Sj6rdOXeABooY5lePwvzE=
 github.com/aperturerobotics/util v1.8.0/go.mod h1:idhGuFuAatygqticAnPcSZhef8yV7TYufLUw1Qfj4Cg=
+github.com/aperturerobotics/util v1.8.2 h1:FpGPRDhFKv/+yo/BOWkQzCZ4tJnlRnETvZ3ScgNw7kk=
+github.com/aperturerobotics/util v1.8.2/go.mod h1:idhGuFuAatygqticAnPcSZhef8yV7TYufLUw1Qfj4Cg=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/cenkalti/backoff v2.2.1+incompatible h1:tNowT99t7UNflLxfYYSlKYsBpXdEet03Pg2g16Swow4=
@@ -59,6 +63,8 @@ golang.org/x/sys v0.7.0 h1:3jlCCIQZPdOYu1h8BkNvLz8Kgwtae2cagcG/VamtZRU=
 golang.org/x/sys v0.7.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.14.0 h1:Vz7Qs629MkJkGyHxUlRHizWJRG2j8fbQKjELVSNhy7Q=
 golang.org/x/sys v0.14.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
+golang.org/x/sys v0.15.0 h1:h48lPFYpsTvQJZF4EKyI4aLHaev3CxivZmv7yZig9pc=
+golang.org/x/sys v0.15.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 google.golang.org/protobuf v1.26.0-rc.1/go.mod h1:jlhhOSvTdKEhbULTjvd4ARK9grFBp09yW+WbY/TyQbw=
 google.golang.org/protobuf v1.30.0 h1:kPPoIgf3TsEvrm0PFe15JQ+570QVxYzEvvHqChK+cng=
