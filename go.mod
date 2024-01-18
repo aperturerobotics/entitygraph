@@ -1,18 +1,18 @@
 module github.com/aperturerobotics/entitygraph
 
-go 1.19
+go 1.21
 
-require github.com/aperturerobotics/controllerbus v0.31.2
+require github.com/aperturerobotics/controllerbus v0.31.6
 
 // Note: the below is from the ControllerBus go.mod
 
 replace (
 	github.com/sirupsen/logrus => github.com/aperturerobotics/logrus v1.9.1-0.20221224130652-ff61cbb763af // aperture
-	google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.28.2-0.20230301012226-7fb3cdbd9197 // aperture
+	google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.32.1-0.20231231025138-7d69d9b7299c // aperture
 )
 
 require (
-	github.com/aperturerobotics/util v1.11.1 // indirect; latest
+	github.com/aperturerobotics/util v1.11.3 // indirect; latest
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -21,6 +21,6 @@ require (
 )
 
 require (
-	github.com/stretchr/testify v1.8.1 // indirect
+	github.com/stretchr/testify v1.8.4 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 )
