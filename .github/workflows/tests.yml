@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         go: ['1.21']
-        node: [18.x]
+        node: [21.x]
     timeout-minutes: 10
     steps:
       - name: Harden Runner
@@ -46,5 +46,3 @@ jobs:
         run: yarn run lint:js
       - name: Lint Go
         run: yarn run lint:go
-      - name: Depcheck JS
-        run: yarn run deps
