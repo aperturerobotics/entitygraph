@@ -2,7 +2,7 @@ module hack
 
 go 1.21
 
-replace google.golang.org/protobuf => github.com/paralin/protobuf-go v1.32.1-0.20231231025138-7d69d9b7299c // aperture
+replace google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.32.1-0.20240118233629-6aeee82c476f // aperture
 
 require (
 	github.com/aperturerobotics/goprotowrap v0.3.0
