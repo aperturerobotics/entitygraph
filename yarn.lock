@@ -1518,9 +1518,9 @@ slash@^3.0.0:
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 starpc@^0.27.0, starpc@^0.27.2:
-  version "0.27.2"
-  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.27.2.tgz#03d57831d59cf904662731955540f63d9ed8b87d"
-  integrity sha512-YEHKJQvzjRKE5bFa665eFEsOoNo2XG2wzMuWqGUShs4RL3Zbr7X0rEXu5biZS85d+SNhPhRYErj/eGjmfXBdqw==
+  version "0.27.3"
+  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.27.3.tgz#d06c4abdd17542c484fee3c9fc3fa44f8dc86a12"
+  integrity sha512-KYfjT4ch2i9GZRSXklBwycHD8Z0jDSxzAKFaKZ2ucNygtUtSHVbwyyyQbC04i/C2sgRAVhhZP+Ws+jUfmfNeCQ==
   dependencies:
     "@aptre/it-ws" "^1.0.0"
     "@chainsafe/libp2p-yamux" "^6.0.2"
