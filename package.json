@@ -24,7 +24,9 @@
     "typecheck": "tsc --noEmit",
     "codegen": "npm run gen",
     "ci": "npm run build && npm run lint:js && npm run lint:go",
-    "format": "prettier --write './!(vendor|dist)/**/(*.ts|*.tsx|*.js|*.html|*.css)'",
+    "format": "npm run format:js && npm run format:go",
+    "format:js": "prettier --write './!(vendor|dist)/**/(*.ts|*.tsx|*.js|*.html|*.css)'",
+    "format:go": "make format",
     "gen": "make genproto",
     "test": "make test && npm run check",
     "test:js": "echo No JS tests.",
@@ -45,15 +47,15 @@
     "patch-package": "^8.0.0",
     "prettier": "^3.0.0",
     "ts-poet": "6.7.0",
-    "ts-proto": "^1.143.0",
-    "typescript": "^5.0.2"
+    "ts-proto": "^1.171.0",
+    "typescript": "^5.4.3"
   },
   "dependencies": {
     "@aperturerobotics/ts-proto-common-types": "^0.3.0",
     "bufferutil": "^4.0.7",
     "long": "^5.2.1",
     "protobufjs": "^7.2.2",
-    "starpc": "^0.27.0",
+    "starpc": "^0.28.0",
     "utf-8-validate": "^6.0.3"
   }
 }

@@ -6,8 +6,7 @@ import (
 )
 
 // CollectEntityGraphDirective implements CollectEntityGraph.
-type CollectEntityGraphDirective struct {
-}
+type CollectEntityGraphDirective struct{}
 
 // NewCollectEntityGraphDirective constructs a new CollectEntityGraph directive.
 func NewCollectEntityGraphDirective() *CollectEntityGraphDirective {
