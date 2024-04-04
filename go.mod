@@ -8,7 +8,7 @@ require github.com/aperturerobotics/controllerbus v0.36.6
 
 replace (
 	github.com/sirupsen/logrus => github.com/aperturerobotics/logrus v1.9.4-0.20240119050608-13332fb58195 // aperture
-	google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.32.1-0.20240118233629-6aeee82c476f // aperture
+	google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.33.1-0.20240322235918-b46c9358eab6 // aperture
 )
 
 require (
@@ -22,7 +22,6 @@ require (
 
 require (
 	github.com/planetscale/vtprotobuf v0.6.0 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
 	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
 	golang.org/x/sys v0.18.0 // indirect
 )
