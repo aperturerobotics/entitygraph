@@ -4,19 +4,22 @@ go 1.22
 
 toolchain go1.22.2
 
+replace github.com/aperturerobotics/entitygraph => ../
+
 replace google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1.33.1-0.20240411062030-e36f75e0a3b8 // aperture
 
 require (
+	github.com/aperturerobotics/entitygraph v0.8.1
 	github.com/aperturerobotics/goprotowrap v0.3.1 // master
-	github.com/aperturerobotics/starpc v0.28.0
+	github.com/aperturerobotics/starpc v0.31.2
+)
+
+require (
 	github.com/evanw/esbuild v0.19.11
 	github.com/golangci/golangci-lint v1.55.2
-	github.com/planetscale/vtprotobuf v0.6.0
 	github.com/psampaz/go-mod-outdated v0.9.0
 	google.golang.org/protobuf v1.33.0
 )
-
-require github.com/aperturerobotics/entitygraph v0.7.0
 
 require (
 	4d63.com/gocheckcompilerdirectives v1.2.1 // indirect
@@ -35,9 +38,9 @@ require (
 	github.com/alexkohler/nakedret/v2 v2.0.2 // indirect
 	github.com/alexkohler/prealloc v1.0.0 // indirect
 	github.com/alingse/asasalint v0.0.11 // indirect
-	github.com/aperturerobotics/controllerbus v0.39.1 // indirect
-	github.com/aperturerobotics/protobuf-go-lite v0.4.3 // indirect
-	github.com/aperturerobotics/util v1.17.1 // indirect
+	github.com/aperturerobotics/controllerbus v0.42.0 // indirect
+	github.com/aperturerobotics/protobuf-go-lite v0.5.0 // indirect
+	github.com/aperturerobotics/util v1.19.0 // indirect
 	github.com/ashanbrown/forbidigo v1.6.0 // indirect
 	github.com/ashanbrown/makezero v1.1.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
