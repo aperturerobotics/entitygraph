@@ -2,12 +2,16 @@ github.com/aperturerobotics/common v0.14.9 h1:oxJjPJug3EKgj7iDXwOBJv+HEuU8QANvi9
 github.com/aperturerobotics/common v0.14.9/go.mod h1:MkCLl9iUXglujvO9wAbrZ9bm72mesXaAq288HGnzshA=
 github.com/aperturerobotics/controllerbus v0.42.0 h1:Z9/sCCZvASqcQIuuWv8yAhMlFoTOsax/rtwxAYWpx8s=
 github.com/aperturerobotics/controllerbus v0.42.0/go.mod h1:nOjqUOCt7mX8KOYFWOX0v/ytrE6cu6cyaHSZvqaUqxg=
+github.com/aperturerobotics/controllerbus v0.44.3 h1:/0zxAMccdlVQJEZExi5o3fWtDzDA3Tmxas0r7Mp6HVI=
+github.com/aperturerobotics/controllerbus v0.44.3/go.mod h1:871Cl1QOvAmKGfrmrJ+KGa4dXLFfwlQ/i5p578pBHv0=
 github.com/aperturerobotics/json-iterator-lite v1.0.0 h1:cihbrYWoK/S2RYXhJLpDZd+GUjVvFJN+D3w1VOqqHRI=
 github.com/aperturerobotics/json-iterator-lite v1.0.0/go.mod h1:snaApCEDtrHHP6UWSLKiYNOZU9A5NyzccKenx9oZEzg=
 github.com/aperturerobotics/protobuf-go-lite v0.6.0 h1:EE168e2oov6wmDv8AdSAlz2G1nHbf0HlYG917CgJ+ug=
 github.com/aperturerobotics/protobuf-go-lite v0.6.0/go.mod h1:6Bp+C+fI1uh0NmIKpxlxyHMkKtCP9Kb3PHkhOzxG4B8=
 github.com/aperturerobotics/util v1.19.0 h1:eDGMk1rhE3pyKF0GC2XGhPCXTM3saQwKIWNq7PPn6Ng=
 github.com/aperturerobotics/util v1.19.0/go.mod h1:qAQ/fIrnvLUe8RW3tKd96foP66BGbSSA0cBRApTMKXg=
+github.com/aperturerobotics/util v1.22.2-0.20240429204300-8b2d5826595d h1:RMsJofnefDuItlP6aN7+BvfgTnJxIiFuvOsIMOIGUzg=
+github.com/aperturerobotics/util v1.22.2-0.20240429204300-8b2d5826595d/go.mod h1:b9c3xIwtCfd0DwhfOXB1Tk44uCckcYaB+0z8N17bWIY=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/cenkalti/backoff v2.2.1+incompatible h1:tNowT99t7UNflLxfYYSlKYsBpXdEet03Pg2g16Swow4=
