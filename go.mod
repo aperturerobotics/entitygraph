@@ -7,12 +7,12 @@ require github.com/aperturerobotics/controllerbus v0.44.4 // latest
 // Note: the below is from the ControllerBus go.mod
 
 require (
+	github.com/aperturerobotics/common v0.15.2 // latest
 	github.com/aperturerobotics/protobuf-go-lite v0.6.1 // latest
-	github.com/aperturerobotics/util v1.22.1 // indirect; latest
+	github.com/aperturerobotics/util v1.23.0 // indirect; latest
 )
 
 require (
-	github.com/aperturerobotics/common v0.15.1
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/sirupsen/logrus v1.9.3
 )

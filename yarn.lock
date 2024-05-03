@@ -43,10 +43,10 @@
     "@typescript/vfs" "^1.5.0"
     lz-string "^1.5.0"
 
-"@aptre/protobuf-es-lite@^0.4.0", "@aptre/protobuf-es-lite@^0.4.1":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@aptre/protobuf-es-lite/-/protobuf-es-lite-0.4.2.tgz#f5f8db0485bfeafde1839f48f41f481a6e086375"
-  integrity sha512-vB97fKwXaUc2pyNRrxTT1Wx7cI+YaZPFj/DsbA5WoBJ6rGCNc1ZgrlguZHcEujwX1U7j6hvWCzRtU2UXqXuHBA==
+"@aptre/protobuf-es-lite@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@aptre/protobuf-es-lite/-/protobuf-es-lite-0.4.3.tgz#1839154a24ac19fb9f4f3bdb4fb0eccd9abdfebc"
+  integrity sha512-qiWodq4qZ6hAbgzMKHCGjaMoQr/Zj0gn8MGkZq6Pf9T93zEuafl0EijDblqRawmU7Ow9Ogzg/kq6G5bUWGvcpQ==
   dependencies:
     "@typescript/vfs" "^1.5.0"
     lz-string "^1.5.0"
@@ -1256,13 +1256,13 @@ starpc@^0.31.1:
     uint8arraylist "^2.4.7"
     ws "^8.17.0"
 
-starpc@^0.32.0:
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.32.0.tgz#c2187b3cc6382d972eb261825757f2376639230f"
-  integrity sha512-M3zjT7O4iP1RunDOmYPBA0KUwv4ABx7masmKHNDO3x2j5OJJBSWi0eZ7ehnPIUamW299OliNo8czXlQMlS8O0A==
+starpc@^0.32.2:
+  version "0.32.2"
+  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.32.2.tgz#45c22bf59c120340b179f9936946384866ed315b"
+  integrity sha512-n0Jgf7tLzPDKpz1EL/Y6GhQQhVk5d7l5LWQn7LRZsiMs9siC6HtKGf0WcS7ScJloAPS11eWylLuIdhmca+gpfw==
   dependencies:
     "@aptre/it-ws" "^1.0.0"
-    "@aptre/protobuf-es-lite" "^0.4.1"
+    "@aptre/protobuf-es-lite" "^0.4.3"
     "@chainsafe/libp2p-yamux" "^6.0.2"
     "@libp2p/interface" "^1.3.1"
     "@libp2p/logger" "^4.0.12"

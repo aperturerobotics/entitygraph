@@ -14,6 +14,7 @@ export const protobufPackage = 'entitygraph.controller'
  */
 export type Config = Message<{}>
 
+// Config contains the message type declaration for Config.
 export const Config: MessageType<Config> = createMessageType({
   typeName: 'entitygraph.controller.Config',
   fields: [] as readonly PartialFieldInfo[],
