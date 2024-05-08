@@ -1317,9 +1317,9 @@ starpc@^0.31.1:
     ws "^8.17.0"
 
 starpc@^0.32.2:
-  version "0.32.3"
-  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.32.3.tgz#238ddc76ecbe28242089953101ca8db809db6006"
-  integrity sha512-TDDrk60B2WDikRtKrQ36cqI7v3w5SGIh90uFOsOg2AEk5USgb+p31bDs/IB+SvO5g7DJllA2vFkQv/lwpsTAaw==
+  version "0.32.4"
+  resolved "https://registry.yarnpkg.com/starpc/-/starpc-0.32.4.tgz#5973a277d2505b5aef648280fddc5d3c29166b00"
+  integrity sha512-l9+GiC1W6zegdIJPw2g+pM2dyn99zc5qQxkB+0Ww0K13PbKdeprGUvz3nbutQJE8Mtc42kLRvdnJAOu3ZWl0Wg==
   dependencies:
     "@aptre/it-ws" "^1.0.0"
     "@aptre/protobuf-es-lite" "^0.4.3"
