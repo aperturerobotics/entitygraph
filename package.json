@@ -25,6 +25,7 @@
     "typecheck": "tsc --noEmit",
     "codegen": "npm run gen",
     "ci": "npm run build && npm run lint:js && npm run lint:go",
+    "deps": "depcheck --ignore-patterns=.eslintrc.cjs,package.json --ignores depcheck,prettier,typescript,starpc,@go/github.com,rimraf,@aptre/common",
     "format": "npm run format:js && npm run format:go",
     "format:js": "prettier --write './!(vendor|dist)/**/(*.ts|*.tsx|*.js|*.html|*.css)'",
     "format:go": "make format",
@@ -43,13 +44,16 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@aperturerobotics/ts-common": "^0.11.0",
+    "@aptre/common": "^0.16.4",
+    "depcheck": "^1.4.7",
     "prettier": "^3.0.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@aperturerobotics/ts-proto-common-types": "^0.3.0",
-    "@aptre/protobuf-es-lite": "^0.4.3",
-    "starpc": "^0.32.2"
+    "@aptre/protobuf-es-lite": "^0.4.4",
+    "starpc": "^0.32.9"
+  },
+  "resolutions": {
+    "@aptre/protobuf-es-lite": "0.4.4"
   }
 }
