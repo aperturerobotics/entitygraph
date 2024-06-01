@@ -11,12 +11,12 @@ replace google.golang.org/protobuf => github.com/aperturerobotics/protobuf-go v1
 require (
 	github.com/aperturerobotics/entitygraph v0.9.1
 	github.com/aperturerobotics/goprotowrap v0.3.1 // master
-	github.com/aperturerobotics/starpc v0.32.9
+	github.com/aperturerobotics/starpc v0.32.12
 )
 
 require (
-	github.com/evanw/esbuild v0.21.3
-	github.com/golangci/golangci-lint v1.58.1
+	github.com/evanw/esbuild v0.21.4
+	github.com/golangci/golangci-lint v1.59.0
 	github.com/psampaz/go-mod-outdated v0.9.0
 	google.golang.org/protobuf v1.34.1
 )
@@ -27,9 +27,9 @@ require (
 	github.com/4meepo/tagalign v1.3.4 // indirect
 	github.com/Abirdcfly/dupword v0.0.14 // indirect
 	github.com/Antonboom/errname v0.1.13 // indirect
-	github.com/Antonboom/nilnil v0.1.8 // indirect
-	github.com/Antonboom/testifylint v1.2.0 // indirect
-	github.com/BurntSushi/toml v1.3.2 // indirect
+	github.com/Antonboom/nilnil v0.1.9 // indirect
+	github.com/Antonboom/testifylint v1.3.0 // indirect
+	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/Djarvur/go-err113 v0.0.0-20210108212216-aea10b59be24 // indirect
 	github.com/GaijinEntertainment/go-exhaustruct/v3 v3.2.0 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
@@ -38,9 +38,9 @@ require (
 	github.com/alexkohler/nakedret/v2 v2.0.4 // indirect
 	github.com/alexkohler/prealloc v1.0.0 // indirect
 	github.com/alingse/asasalint v0.0.11 // indirect
-	github.com/aperturerobotics/controllerbus v0.45.3 // indirect
+	github.com/aperturerobotics/controllerbus v0.45.6 // indirect
 	github.com/aperturerobotics/protobuf-go-lite v0.6.5 // indirect
-	github.com/aperturerobotics/util v1.23.1 // indirect
+	github.com/aperturerobotics/util v1.23.5 // indirect
 	github.com/ashanbrown/forbidigo v1.6.0 // indirect
 	github.com/ashanbrown/makezero v1.1.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -63,13 +63,13 @@ require (
 	github.com/denis-tingaikin/go-header v0.5.0 // indirect
 	github.com/esimonov/ifshort v1.0.4 // indirect
 	github.com/ettle/strcase v0.2.0 // indirect
-	github.com/fatih/color v1.16.0 // indirect
+	github.com/fatih/color v1.17.0 // indirect
 	github.com/fatih/structtag v1.2.0 // indirect
 	github.com/firefart/nonamedreturns v1.0.5 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/fzipp/gocyclo v0.6.0 // indirect
 	github.com/ghostiam/protogetter v0.3.6 // indirect
-	github.com/go-critic/go-critic v0.11.3 // indirect
+	github.com/go-critic/go-critic v0.11.4 // indirect
 	github.com/go-toolsmith/astcast v1.1.0 // indirect
 	github.com/go-toolsmith/astcopy v1.1.0 // indirect
 	github.com/go-toolsmith/astequal v1.2.0 // indirect
@@ -98,7 +98,7 @@ require (
 	github.com/gostaticanalysis/nilerr v0.1.1 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
-	github.com/hashicorp/go-version v1.6.0 // indirect
+	github.com/hashicorp/go-version v1.7.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
@@ -157,7 +157,7 @@ require (
 	github.com/sanposhiho/wastedassign/v2 v2.0.7 // indirect
 	github.com/sashamelentyev/interfacebloat v1.1.0 // indirect
 	github.com/sashamelentyev/usestdlibvars v1.25.0 // indirect
-	github.com/securego/gosec/v2 v2.19.0 // indirect
+	github.com/securego/gosec/v2 v2.20.1-0.20240525090044-5f0084eb01a9 // indirect
 	github.com/shazow/go-diff v0.0.0-20160112020656-b6b7b6733b8c // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sivchari/containedctx v1.0.3 // indirect
@@ -191,7 +191,7 @@ require (
 	github.com/yeya24/promlinter v0.3.0 // indirect
 	github.com/ykadowak/zerologlint v0.1.5 // indirect
 	gitlab.com/bosi/decorder v0.4.2 // indirect
-	go-simpler.org/sloglint v0.6.0 // indirect
+	go-simpler.org/sloglint v0.7.0 // indirect
 	go.tmz.dev/musttag v0.7.2 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
@@ -201,7 +201,7 @@ require (
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/text v0.15.0 // indirect
 	golang.org/x/tools v0.21.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
