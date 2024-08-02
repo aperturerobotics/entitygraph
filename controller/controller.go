@@ -12,7 +12,7 @@ import (
 	"github.com/aperturerobotics/entitygraph/entity"
 	"github.com/aperturerobotics/entitygraph/store"
 
-	"github.com/blang/semver"
+	"github.com/blang/semver/v4"
 	"github.com/sirupsen/logrus"
 )
 
