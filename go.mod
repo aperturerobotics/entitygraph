@@ -2,7 +2,7 @@ module github.com/aperturerobotics/entitygraph
 
 go 1.23
 
-toolchain go1.23.3
+toolchain go1.23.4
 
 require github.com/aperturerobotics/controllerbus v0.49.0 // latest
 
